@@ -1,103 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./reset.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./asset/css/reset.css" />
+        <link rel="stylesheet" href="./asset/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <h1>kakera crochet</h1>
+            </div>
+            <nav class="header-right">
+                <ul class="nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
 
-</head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1>kakera crochet</h1>
-        </div>
-        <nav class="header-right">
-            <ul class="nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-            <!-- Feature Buttons -->
-            <section class="features">
-              <div class="features-button">
-                <button>季節の新作</button>
-                <button>人気アイテム</button>
-              </div>
+        <main>
+            <!-- ここにid="home"をつけた！ -->
+            <section class="features" id="home">
+                <div class="feature-bg"></div>
+                <div class="features-content">
+                    <h2>そっと寄り添う、糸のかけら</h2>
+                    <p>kakera crochet</p>
+                </div>
             </section>
-          
+
             <!-- Work List -->
             <section class="work-list">
                 <h2>Work List</h2>
                 <div class="filters">
                     <select name="category">
                         <option value="">Category</option>
+                        <option value="bag">bag</option>
+                        <option value="cotton">cotton</option>
+                        <option value="others">others</option>
                     </select>
                     <select name="season">
                         <option value="">Season</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                        <option value="winter">Winter</option>
                     </select>
                 </div>
                 <div class="items">
                     <div class="item-card">
                         <div class="img-placeholder">
-                            <img src="./実際画像/main-img-orange.jpeg" alt="オレンジ入りモチーフバック">
+                            <img
+                                src="./asset/img/img/main-img-orange.jpeg"
+                                alt="オレンジ入りモチーフバック"
+                            />
                         </div>
-                        <p>作品タイトル</p>
+                        <p>Piece of Picnic</p>
                         <p>¥1,999</p>
                         <button>View Details</button>
                     </div>
                     <div class="item-card">
                         <div class="img-placeholder">
-                            <img src="./実際画像/作品１.webp" alt="キッズサイズバブーシュカ">
+                            <img
+                                src="./asset/img/img/babushka.webp"
+                                alt="キッズサイズバブーシュカ"
+                            />
                         </div>
-                        <p>作品タイトル</p>
+                        <p>Sunflower Babushka</p>
                         <p>¥1,599</p>
                         <button>View Details</button>
                     </div>
                     <div class="item-card">
                         <div class="img-placeholder">
-                            <img src="./実際画像/作品例２.jpeg" alt="メッシュバック">
+                            <img
+                                src="./asset/img/img/bag.jpeg"
+                                alt="メッシュバック"
+                            />
                         </div>
-                        <p>作品タイトル</p>
+                        <p>Cozy Mesh</p>
                         <p>¥1,299</p>
                         <button>View Details</button>
                     </div>
                 </div>
             </section>
-          
+
+            <!-- ボタンだけのセクション -->
+            <section class="features button-section">
+                <div class="features-button">
+                    <button>季節の新作</button>
+                    <button>人気アイテム</button>
+                </div>
+            </section>
+
             <!-- About -->
             <section class="about" id="about">
                 <h2>About</h2>
+                <h3>日々にそっと寄り添う、かぎ針のぬくもりを。</h3>
                 <div class="about-content">
                     <div class="img-placeholder">
-                        <img src="./実際画像/編んでる２.webp" alt="about">
+                        <img
+                            src="./asset/img/img/Crocheting Moments1.webp"
+                            alt="about"
+                        />
                     </div>
                     <div class="text">
-                        <p>kakera crochetはかぎ針編みに特化したオリジナルの作品をお届けする、ちいさな編み物ブランドです。
+                        <ul class="about-points">
+                            <li>🧵 すべて手編みの一点もの</li>
+                            <li>🌸 季節に寄り添う色とデザイン</li>
+                            <li>☁️ 軽くてやさしい肌触り</li>
+                        </ul>
 
-                            ひとつひとつの作品には、
-                            季節の風景や、どこか懐かしい物語の“かけら”をそっと編み込んでいます。
-                            
-                            手に取ったときにふわっと感じる、糸のぬくもり。
-                            そして、丁寧に編み上げた手仕事のやさしさ。
-                            そんな想いを、暮らしの中にそっと添えられますように。</p>
+                        <p>
+                            kakera
+                            crochetは、かぎ針編みに特化したオリジナルの作品をお届けする、ちいさな編み物ブランドです。
+                            ひとつひとつの作品には、季節の風景や懐かしい物語の“かけら”をそっと編み込んでいます。
+                            暮らしに寄り添う、糸のぬくもりをお楽しみください。
+                        </p>
                     </div>
                 </div>
             </section>
+
+            <!-- トップへ戻るボタン -->
+            <a href="#" id="toTop">Top</a>
         </main>
-          
+
         <footer>
             <div class="footer-content">
-                <span>© kakera crochet</span>
-                <span class="social">📷</span>
+                <span class="social">
+                    <img
+                        src="./asset/img/logo/kakera-crochet-img2.png"
+                        alt="kakera crochetのロゴ"
+                    />
+                </span>
+                <small id="copyright">© kakera crochet</small>
             </div>
         </footer>
-        
-    
-    
 
-</body>
+        <!-- jQueryは1回だけ読み込む！ -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./asset/js/main.js"></script>
+
+        <!-- スクロールスクリプト -->
+        <script>
+            $(function () {
+                // トップへ戻るボタンクリック
+                $("#toTop").click(function (e) {
+                    e.preventDefault();
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                });
+
+                // ページ内リンク（#）クリック
+                $('a[href^="#"]').click(function (e) {
+                    e.preventDefault();
+                    var speed = 500;
+                    var href = $(this).attr("href");
+                    var $target = $(href == "#" || href == "" ? "html" : href);
+                    var position = $target.offset().top;
+                    $("html, body").animate(
+                        { scrollTop: position },
+                        speed,
+                        "swing"
+                    );
+                    return false;
+                });
+            });
+        </script>
+    </body>
 </html>
