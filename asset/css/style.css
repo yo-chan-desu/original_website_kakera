@@ -13,12 +13,19 @@ header {
     justify-content: space-around;
     align-items: center;
     color: #7b6f63;
+    flex-wrap: wrap;
 }
 
 .features {
     position: relative;
     overflow: hidden;
-    height: 80vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
 }
 
 .feature-bg {
@@ -54,34 +61,29 @@ header {
     margin-bottom: 40px;
 }
 
-.header-right a {
+/* ナビゲーション全体 */
+.header-right .nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* リンクの装飾 */
+.header-right .nav li a {
     text-decoration: none;
-    color: #5a4b3c;
-    font-weight: 500;
     font-size: 1rem;
-    transition: color 0.3s ease;
 }
 
 .header-right a:hover {
     color: #a68c72;
 }
 
-.nav {
-    display: flex;
-}
-
-li {
-    list-style: none;
-}
-
-.nav li a {
-    margin-left: 20px;
-}
-
 .header-left h1 {
     color: #7b6f63;
     font-size: 1.8rem;
-    font-family: "serif";
+    /* font-family: "serif"; */
 }
 
 #contact {
@@ -119,17 +121,6 @@ section {
     padding: 4rem 2rem;
 }
 
-.features {
-    position: relative;
-    height: 100vh; /* 全画面にするならこれ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-}
-
 .features-content {
     position: relative;
     z-index: 2;
@@ -159,7 +150,7 @@ section {
     color: #7b6f63;
     font-weight: bold;
     padding: 0.8rem 1.5rem;
-    margin: 0 1rem;
+    margin: 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -170,7 +161,9 @@ section {
 }
 
 .button-section {
-    margin: 1rem 0;
+    margin: 0; /* 余白なしに */
+    padding: 1rem 0; /* 上下1remだけにしてスッキリ */
+    height: 100%;
 }
 
 .work-list h2 {
@@ -207,9 +200,18 @@ section {
 /*work list-item-card*/
 .items {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* アイテム間のすき間 */
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* アイテム間のすき間 */
+    margin: 0 auto;
+    max-width: 1000px; /* 横幅を適度に制限 */
 }
 
 .item-card {
@@ -217,28 +219,31 @@ section {
     border: 1px solid #eee2d2;
     border-radius: 12px;
     padding: 1rem;
-    width: 250px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 calc(33.333% - 2rem); /* 3列にする（gap分ひいたサイズ） */
+    box-sizing: border-box;
 }
 
-.img-placeholder {
-    background-color: #f0e9e0;
-    height: 180px;
+
+.details-button {
+    display: inline-block;
+    background-color: #fffaf4;
+    color: #5a4b3c;
+    border: 2px solid #d6c9b8;
+    padding: 5px 15px;
+    text-decoration: none;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-.item-card button {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #fff5e9;
-    border: 1px solid #c9b8a0;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #7b6f63;
+.details-button:hover {
+    background-color: #e0bebe;
 }
+
 
 .item-card:hover {
     transform: translateY(-5px);
@@ -247,31 +252,26 @@ section {
 
 .item-card p:first-of-type {
     font-weight: 600; /* タイトルは少し太め */
-    font-size: 16px; /* フォントサイズはやや大きめ */
-    color: #5a4b3c; 
-    margin-top: 10px;
+    font-size: 20px; /* フォントサイズはやや大きめ */
+    color: #5a4b3c;
+    margin-top: 15px;
 }
 
 .item-card p:nth-of-type(2) {
     font-weight: 400; /* 値段は普通の太さ */
-    font-size: 14px; /* ちょっと小さめ */
+    font-size: 17px; /* ちょっと小さめ */
     color: #666; /* 柔らかい薄めグレー */
-    margin-top: 5px;
+    margin: 5px;
 }
 
 /*About*/
+
 .about h2 {
-    text-align: center;
     font-size: 3rem;
-    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.about h3 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
 
 .about-content {
     display: flex;
@@ -283,6 +283,42 @@ section {
     max-width: 1000px;
     margin: 0 auto;
     text-align: left;
+}
+
+.about h3 {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.about h3::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #d6c9b8;
+    bottom: 0;
+    left: 25%;
+    border-radius: 10px;
+}
+
+.about h2,
+.about h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-content .img-placeholder {
@@ -307,7 +343,9 @@ section {
     max-width: 550px;
 }
 
-.about-points{
+.about-points {
+    list-style: none; /* ・を消す */
+    padding-left: 0;
     gap: 2rem;
     flex-wrap: wrap;
     padding: 2rem 1rem;
@@ -315,7 +353,7 @@ section {
     margin-bottom: 10px;
     text-align: left;
     /* color: #8c6d5a; */
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     gap: 8px;
 }
@@ -325,6 +363,49 @@ section {
     transition: transform 0.1s ease;
 }
 
+/*Contact*/
+
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fffaf4;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contact-button-wrapper {
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 24px;
+    bottom: 30px;
+    background-color: #fff;
+    border: 2px solid #d6c9b8;
+    color: #7b6f63;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #f7eedd;
+}
+
+/*footer*/
 footer {
     background-color: #fff5e9;
     padding: 2rem;
@@ -346,14 +427,10 @@ footer {
     gap: 1rem;
 }
 
-.img-placeholder {
-    width: 100%;
-    padding-top: 100%; /* 正方形にする */
-    aspect-ratio: 1 / 1;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.footer-content img {
+    width: 150px; /* 横幅だけ決める */
+    height: auto; /* 高さは比率キープ */
+    max-width: 100%; /* 親からはみ出さない */
 }
 
 .img-placeholder img {
@@ -365,13 +442,71 @@ footer {
     object-fit: cover;
 }
 
+.img-placeholder {
+    width: 100%;
+    padding-top: 100%; /* 正方形にする */
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .header-right .nav {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; /* スマホでも3つ並ぶように */
+    }
+
+    .header-right .nav li a {
+        font-size: 0.9rem;
+    }
+
+    .features h2 {
+        font-size: 1.5rem; /* 少し小さめに */
+        line-height: 1.3;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto 1rem;
+        word-break: keep-all; /* 単語の途中で折り返さんようにする */
+    }
+
+    .item-card {
+        flex: 0 0 100%;
+    }
+
     .about-content {
         flex-direction: column;
         text-align: center;
     }
-    .about-content .text {
-        max-width: 100%;
+
+    /* .about-content .text {
+        max-width: 100%; */
+
+    .about h3 {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .about p,
+    .contact p {
+        font-size: 1rem; /* 文字を少し小さく */
+        line-height: 1.8; /* 行間をゆったり */
+        word-break: break-word; /* 長い単語も改行OK */
+        text-align: left; /* 必要なら左寄せに（中央ならcenter） */
+        padding: 0 1rem; /* 左右に余白を追加して見やすく */
     }
 }
 
